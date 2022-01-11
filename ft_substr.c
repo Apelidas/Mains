@@ -6,7 +6,7 @@
 /*   By: kkleinsc <kkleinsc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 14:18:56 by kkleinsc          #+#    #+#             */
-/*   Updated: 2022/01/10 14:19:02 by kkleinsc         ###   ########.fr       */
+/*   Updated: 2022/01/11 12:53:43 by kkleinsc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static char	*ft_allocate(size_t len, size_t i)
 
 	if (i >= len)
 	{
-		sub = malloc(sizeof(char) * (len));
+		sub = malloc(sizeof(char) * (len +1));
 	}
 	else
 	{
@@ -32,12 +32,12 @@ char	*ft_substr(char const *s, size_t start, size_t len)
 	char	*sub;
 	size_t	i;
 
+	if (!s)
+		return (NULL);
 	i = ft_strlen(s);
 	sub = ft_allocate(len, i);
-	if (sub == NULL)
-	{
+	if (!sub)
 		return (NULL);
-	}
 	if (start < i)
 	{
 		i = 0;

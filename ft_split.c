@@ -6,7 +6,7 @@
 /*   By: kkleinsc <kkleinsc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 13:42:28 by kkleinsc          #+#    #+#             */
-/*   Updated: 2022/01/11 11:32:13 by kkleinsc         ###   ########.fr       */
+/*   Updated: 2022/01/11 13:06:31 by kkleinsc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,15 +63,20 @@ static char const	*ft_copy(int len, char const *s, char **out, int pos)
 	return (s);
 }
 
-static void	*ft_free_matrix(char **out, int pos)
+static int	ft_allocmatrix(char **out, int pos, int len)
 {
-	while (pos >= 0)
+	out[pos] = malloc(sizeof(char) * (len + 1));
+	if (!out[pos])
 	{
-		free(out[pos]);
-		pos--;
+		while (pos >= 0)
+		{
+			free(out[pos]);
+			pos--;
+		}
+		free(out);
+		return (0);
 	}
-	free(out);
-	return (NULL);
+	return (1);
 }
 
 char	**ft_split(char const *s, char c)
@@ -82,7 +87,9 @@ char	**ft_split(char const *s, char c)
 	int		scount;
 
 	pos = 0;
-	out = malloc(sizeof(char *) * ((scount = ft_splitcount(s, c)) + 1));
+	if (!s)
+		return (NULL);
+	out = ft_calloc(((scount = ft_splitcount(s, c)) + 1), sizeof(char *));
 	if (out == NULL)
 		return (NULL);
 	while (*s && pos < scount)
@@ -90,15 +97,10 @@ char	**ft_split(char const *s, char c)
 		while (*s == c)
 			s++;
 		len = ft_strlenc(s, c);
-		out[pos] = malloc(sizeof(char) * (len + 1));
-		if (!out[pos])
-			return (ft_free_matrix(out, pos));
+		if (!ft_allocmatrix(out, pos, len))
+			return (NULL);
 		s = ft_copy(len, s, out, pos);
 		pos++;
 	}
-	if (pos > 0)
-		if (*(--s) == c)
-			pos--;
-	out[pos] = NULL;
 	return (out);
 }
