@@ -6,7 +6,7 @@
 /*   By: kkleinsc <kkleinsc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 13:05:26 by kkleinsc          #+#    #+#             */
-/*   Updated: 2022/01/10 13:38:35 by kkleinsc         ###   ########.fr       */
+/*   Updated: 2022/01/11 11:00:17 by kkleinsc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,7 @@
 void	*ft_calloc(size_t count, size_t size)
 {
 	void	*mem;
-	size_t	i;
 
-	i = 0;
 	mem = malloc(size * count);
 	if (mem == NULL)
 	{
