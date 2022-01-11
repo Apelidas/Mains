@@ -6,7 +6,7 @@
 /*   By: kkleinsc <kkleinsc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 14:15:16 by kkleinsc          #+#    #+#             */
-/*   Updated: 2022/01/11 11:31:43 by kkleinsc         ###   ########.fr       */
+/*   Updated: 2022/01/11 12:18:25 by kkleinsc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,8 @@ static char	*ft_loops(const char *s, const char *sub, size_t n)
 	{
 		if (*s == sub[i])
 		{
-			while (s[i] == sub[i] && n > 0 && sub[i])
+			while (s[i] == sub[i] && n - i > 0 && sub[i])
 			{
-				n--;
 				i++;
 			}
 			if (sub[i] == 0)
@@ -51,4 +50,9 @@ char	*ft_strnstr(const char *s, const char *sub, size_t n)
 	if (n > 0)
 		bs = ft_loops(s, sub, n);
 	return (bs);
+}
+
+int main()
+{
+	ft_strnstr("aaabcabcd", "abcd", 9);
 }
