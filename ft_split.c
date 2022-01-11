@@ -6,7 +6,7 @@
 /*   By: kkleinsc <kkleinsc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 13:42:28 by kkleinsc          #+#    #+#             */
-/*   Updated: 2022/01/11 10:12:59 by kkleinsc         ###   ########.fr       */
+/*   Updated: 2022/01/11 11:32:13 by kkleinsc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ char	**ft_split(char const *s, char c)
 	int		scount;
 
 	pos = 0;
-	out = malloc(sizeof(char *) * (scount = ft_splitcount(s, c) + 1));
+	out = malloc(sizeof(char *) * ((scount = ft_splitcount(s, c)) + 1));
 	if (out == NULL)
 		return (NULL);
 	while (*s && pos < scount)

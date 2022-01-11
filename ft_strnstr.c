@@ -6,7 +6,7 @@
 /*   By: kkleinsc <kkleinsc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 14:15:16 by kkleinsc          #+#    #+#             */
-/*   Updated: 2022/01/11 11:00:28 by kkleinsc         ###   ########.fr       */
+/*   Updated: 2022/01/11 11:31:43 by kkleinsc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,12 @@
 
 static char	*ft_loops(const char *s, const char *sub, size_t n)
 {
+	int		i;
 	char	*bs;
 
 	bs = NULL;
-	while (*s)
+	i = 0;
+	while (*s && n > 0)
 	{
 		if (*s == sub[i])
 		{
@@ -41,11 +43,9 @@ static char	*ft_loops(const char *s, const char *sub, size_t n)
 
 char	*ft_strnstr(const char *s, const char *sub, size_t n)
 {
-	int		i;
 	char	*bs;
 
 	bs = NULL;
-	i = 0;
 	if (!sub || *sub == 0)
 		return ((char *)s);
 	if (n > 0)
