@@ -1,4 +1,5 @@
 #include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
 void test_Clap()
 {
@@ -32,9 +33,24 @@ void test_scav()
 	b.guardgate();
 }
 
+void test_frag()
+{
+	FragTrap a("SC4V-TP");
+	FragTrap b("RedBelly");
+
+	a.attack(b.getName());
+	b.takeDamage(a.getDamage());
+	b.beRepaired(20);
+	b.highFiveGuys();
+}
+
+
 
 int main()
 {
-	//test_Clap();
+	test_Clap();
+	std::cout << std::endl;
 	test_scav();
+	std::cout << std::endl;
+	test_frag();
 }
