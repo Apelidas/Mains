@@ -25,3 +25,9 @@ void Animal::makeSound()
 {
 	std::cout << "I am an Animal!" << std::endl;
 }
+
+Animal& Animal::operator=(Animal const &in)
+{
+	this->type = in.type;
+	return (*this);
+}
