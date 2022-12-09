@@ -11,12 +11,10 @@ class Animal
 		Brain *mind;
 
 	public:
-		Animal();
-		Animal(std::string type);
 		virtual ~Animal();
 		std::string getType();
 		void setType(std::string type);
-		virtual void makeSound();
+		virtual void makeSound() const = 0;
 		Animal& operator=(Animal const &in);
 };
 
