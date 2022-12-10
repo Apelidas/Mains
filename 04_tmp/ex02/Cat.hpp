@@ -12,7 +12,7 @@ class Cat: public Animal
 		Cat();
 		Cat(Cat const &in);
 		virtual ~Cat();
-		virtual void makeSound();
+		virtual void makeSound() const;
 		void think();
 		Cat& operator=(Cat const &in);
 };

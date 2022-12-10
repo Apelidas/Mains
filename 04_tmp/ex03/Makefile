@@ -6,12 +6,11 @@ CFLAGS = -Wall -Wextra -Werror -std=c++98
 NAME = fixed
 
 SRC =	main.cpp\
-		Animal.cpp\
-		Cat.cpp\
-		Dog.cpp\
-		WrongAnimal.cpp\
-		WrongCat.cpp\
-		Brain.cpp
+		AMateria.cpp\
+		Character.cpp\
+		Cure.cpp\
+		Ice.cpp\
+		IMateriasource.cpp
 
 OBJ = $(SRC:.cpp=.o)
 

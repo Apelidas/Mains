@@ -56,8 +56,8 @@ void test_array()
 
 int main()
 {
-	// test();
-	// std::cout << std::endl;
+	test();
+	std::cout << std::endl;
 	// test_brain();
 	test_copy();
 }
