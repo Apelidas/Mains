@@ -58,6 +58,7 @@ int main()
 {
 	test();
 	std::cout << std::endl;
-	// test_brain();
+	test_brain();
+	std::cout << std::endl;
 	test_copy();
 }
