@@ -73,10 +73,7 @@ void testlots()
 {
 	Span myvec(20000);
 
-	for(int i = 0; i < 20000; i++)
-	{
-		myvec.addNumber();
-	}
+	myvec.addMany(20000);
 
 	std::cout << "shortestSpan:";
 	try

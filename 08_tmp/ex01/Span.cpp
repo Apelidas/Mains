@@ -20,6 +20,11 @@ void Span::addNumber(int in)
 	this->_values.push_back(in);
 }
 
+void Span::addMany(int in)
+{
+	this->_values.insert(this->_values.begin(), in, 0);
+}
+
 unsigned int Span::shortestSpan()
 {
 	unsigned int out;
