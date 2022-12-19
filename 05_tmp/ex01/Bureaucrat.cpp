@@ -1,5 +1,19 @@
 #include "Bureaucrat.hpp"
 
+Bureaucrat::Bureaucrat(): name("Passierschein A38"), grade(150)
+{
+}
+
+Bureaucrat::Bureaucrat(Bureaucrat &copy): name(copy.name), grade(copy.grade)
+{
+}
+
+Bureaucrat& Bureaucrat::operator=(const Bureaucrat &copy)
+{
+	this->grade = copy.grade;
+	return (*this);
+}
+
 Bureaucrat::Bureaucrat(int grade): name("Passierschein A38")
 {
 	if (grade < 1)

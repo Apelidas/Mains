@@ -10,6 +10,17 @@ AForm::AForm(int gradeSign, int gradeExec, std::string name): _name(name), _sign
 	std::cout << "AForm Fully Variable Constructor" << std::endl;
 }
 
+AForm::AForm(AForm &copy): _name(copy._name), _signed(copy._signed) , _gradeSign(copy._gradeSign), _gradeExec(copy._gradeExec)
+{
+	std::cout << "Form Copy Constructor Constructor" << std::endl;
+}
+
+AForm& AForm::operator=(AForm &copy)
+{
+	this->_signed = copy._signed;
+	return(*this);
+}
+
 AForm::~AForm()
 {
 	std::cout << "AForm Destructor" << std::endl;

@@ -1,8 +1,23 @@
 #include "Span.hpp"
 
-Span::Span(unsigned int n)
+Span::Span(): _n(0)
+{}
+
+Span::Span(const Span &copy)
 {
-	this->_n = n;
+	*this = copy;
+}
+
+Span &Span::operator=(const Span &copy)
+{
+	this->_values.clear();
+	this->_n = copy._n;
+	this->_values.insert(this->_values.begin(), copy._values.begin(), copy._values.end());
+	return (*this);
+}
+
+Span::Span(unsigned int n): _n(n)
+{
 }
 
 void Span::addNumber()
