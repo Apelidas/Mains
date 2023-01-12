@@ -6,7 +6,7 @@
 /*   By: kkleinsc <kkleinsc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 13:42:28 by kkleinsc          #+#    #+#             */
-/*   Updated: 2022/01/11 13:06:31 by kkleinsc         ###   ########.fr       */
+/*   Updated: 2022/01/11 13:29:40 by kkleinsc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ static int	ft_splitcount(char const *s, char c)
 		}
 		s++;
 	}
+	if (i > 0)
+		count++;
 	return (count);
 }
 

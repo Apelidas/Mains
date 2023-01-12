@@ -6,13 +6,13 @@
 /*   By: kkleinsc <kkleinsc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 13:04:08 by kkleinsc          #+#    #+#             */
-/*   Updated: 2022/01/10 13:09:31 by kkleinsc         ###   ########.fr       */
+/*   Updated: 2022/10/31 14:57:42 by kkleinsc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-static int	ft_getnum(const char *str)
+static long int	ft_getnum(const char *str)
 {
-	int	num;
+	long int	num;
 
 	num = 0;
 	while (*str >= 48 && *str <= 57)
@@ -26,8 +26,8 @@ static int	ft_getnum(const char *str)
 
 int	ft_atoi(const char *str)
 {
-	unsigned int	num;
-	int				help;
+	long int	num;
+	int			help;
 
 	help = 1;
 	while (*str == '\t' || *str == '\n' || *str == '\v'
@@ -43,5 +43,7 @@ int	ft_atoi(const char *str)
 		str++;
 	}
 	num = ft_getnum(str) * help;
-	return (num);
+	if (num > 2147483647 || num < -2147483648)
+		return (0);
+	return ((int) num);
 }

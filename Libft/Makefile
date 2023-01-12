@@ -6,7 +6,7 @@
 #    By: kkleinsc <kkleinsc@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/10 14:21:32 by kkleinsc          #+#    #+#              #
-#    Updated: 2022/01/11 09:57:16 by kkleinsc         ###   ########.fr        #
+#    Updated: 2023/01/06 15:20:05 by kkleinsc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,7 +49,12 @@ MAND_SRC =	ft_isalpha.c        \
             ft_putchar_fd.c     \
             ft_putstr_fd.c      \
             ft_putendl_fd.c     \
-            ft_putnbr_fd.c
+            ft_putnbr_fd.c      \
+            ft_printf.c  \
+		    output.c	    \
+		    tostring.c   \
+            get_next_line_bonus.c\
+            get_next_line_utils_bonus.c
 
 MAND_OBJ = ${MAND_SRC:.c=.o}
 
@@ -66,21 +71,21 @@ BONUS_SRC =	ft_lstadd_back.c    \
 BONUS_OBJ = ${BONUS_SRC:.c=.o}
 
 $(NAME): $(MAND_OBJ)
-	ar -r $(NAME) $(MAND_OBJ) 
-
+	@ ar -rc $(NAME) $(MAND_OBJ) 
+    
 .PHONY: bonus clean fclean re all
-all: $(NAME) bonus
+all: $(NAME)
 
 %.o: %.c
-	$(CC) $(CFLAGS) $^
+	@ $(CC) $(CFLAGS) $^
 
 bonus: $(MAND_OBJ) $(BONUS_OBJ)
-	ar -r $(NAME) $(MAND_OBJ) $(BONUS_OBJ)
+	@ ar -rc $(NAME) $(MAND_OBJ) $(BONUS_OBJ)
 
 clean:
-	rm -f $(MAND_OBJ) $(BONUS_OBJ)
+	@ rm -f $(MAND_OBJ) $(BONUS_OBJ)
 
 fclean: clean
-	rm -f $(NAME)
+	@ rm -f $(NAME)
 
 re: fclean all
