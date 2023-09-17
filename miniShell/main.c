@@ -78,7 +78,7 @@ int	main(int argc, char **argv, char **envp)
 	create_env_list(&env, envp);
 	run_shell(&env);
 	envp[0] = "0";
-	argc += 1;
+	argc = argc + 1;
 	if (!argv)
 		exit(0);
 }
