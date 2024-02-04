@@ -1,6 +1,6 @@
-#db_name = Database Name
-#db_user = User
-#db_pwd = User Password
+db_name = Database
+db_user = kkleinsc
+db_pwd = aPassword
 
 echo "CREATE DATABASE IF NOT EXISTS $db_name ;" > mdb.sql
 echo "CREATE USER IF NOT EXISTS '$db_user'@'%' IDENTIFIED BY '$db_pwd' ;" >> mdb.sql
