@@ -25,6 +25,6 @@ clean:
 	rm -rf $(HOME)/data/mariadb
 
 log:
-	@docker compose -f ./srcs/docker-compose.yml logs | less
+	@docker compose -f ./srcs/docker-compose.yml logs
 
 .PHONY: all re down clean
