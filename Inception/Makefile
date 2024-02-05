@@ -22,4 +22,7 @@ clean:
 	rm -rf $(HOME)/data/wordpress
 	rm -rf $(HOME)/data/mariadb
 
+log:
+	@docker compose -f ./srcs/docker-compose.yml logs | less
+
 .PHONY: all re down clean
