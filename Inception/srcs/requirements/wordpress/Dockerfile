@@ -5,7 +5,7 @@ RUN apt-get update && apt-get -y install php7.3 php-mysqli php-fpm wget nano cur
 EXPOSE 9000
 
 RUN curl https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar --output /usr/bin/wp --silent
-RUN chmod +x ./bin/usr/wp
+RUN chmod +x /bin/usr/wp
 
 COPY ./conf/www.conf /etc/php/7.3/fpm/pool.d
 COPY ./tools /var/www/
