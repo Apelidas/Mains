@@ -14,7 +14,7 @@
 	cd /var/www/html;
 	wp core download --allow-root;
 	# mv /var/www/wp-config.php /var/www/html/
-	wp config create --allow-root --dbhost=mariadb --dbname=wordpress --dbuser=test --dbpass=12345
+	wp config create --allow-root --dbhost=127.0.0.1 --dbname=wordpress --dbuser=test --dbpass=12345
 	echo "Wordpress: creating users..."
 	wp core install --allow-root --url=${WP_URL} --title=${WP_TITLE} --admin_user=${WP_ADMIN_LOGIN} --admin_password=${WP_ADMIN_PASSWORD} --admin_email=${WP_ADMIN_EMAIL}
 	wp user create --allow-root ${WP_USER_LOGIN} ${WP_USER_EMAIL} --user_pass=${WP_USER_PASSWORD};
