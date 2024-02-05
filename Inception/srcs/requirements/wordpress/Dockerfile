@@ -1,6 +1,6 @@
 FROM debian:buster
 
-RUN apt-get update && apt-get -y install php7.3 php-mysqli php-fpm wget nano
+RUN apt-get update && apt-get -y install php7.3 php-mysqli php-fpm wget nano curl
 
 EXPOSE 9000
 
