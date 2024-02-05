@@ -10,8 +10,8 @@ if [ ! -f /var/www/html/wp-config.php ]; then
 	echo "Wordpress: setting up..."
 	mkdir -p /var/www/html
 	wget https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar;
-	chmod +x wp-cli.phar; 
-	mv wp-cli.phar /usr/local/bin/wp;
+	mv wp-cli.phar /usr/bin/wp;
+	chmod +x /usr/bin/wp; 
 	cd /var/www/html;
 	wp core download --allow-root;
 	mv /var/www/wp-config.php /var/www/html/
