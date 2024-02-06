@@ -12,7 +12,7 @@
 	wp core download --allow-root;
 	# mv /var/www/wp-config.php /var/www/html/
 	wp config create --dbhost=mariadb \
-					--dbname=wordpress \ 
+					--dbname=wordpress \
 					--dbuser=kkleinsc \
 					--dbpass=kkleinsc \
 					--allow-root
