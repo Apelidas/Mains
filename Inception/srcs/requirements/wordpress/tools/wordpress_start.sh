@@ -25,3 +25,4 @@
 	# 				--admin_email=${WP_ADMIN_EMAIL}
 	# # wp user create --allow-root ${WP_USER_LOGIN} ${WP_USER_EMAIL} --user_pass=${WP_USER_PASSWORD};
 	# echo "Wordpress: set up!"
+	php-fpm7.3 --nodaemonize
