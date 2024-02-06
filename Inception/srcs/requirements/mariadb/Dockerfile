@@ -10,4 +10,4 @@ COPY ./tools /
 RUN chmod +x /setup.sh
 # RUN sh /setup.sh
 
-CMD ["mysqld"]
+CMD ["bash"]
