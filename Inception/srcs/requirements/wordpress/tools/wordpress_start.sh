@@ -11,10 +11,10 @@
 	cd /var/www/html;
 	wp core download --allow-root;
 	# mv /var/www/wp-config.php /var/www/html/
-	wp config create --dbhost=mariadb \
-					--dbname=wordpress \
-					--dbuser=kkleinsc \
-					--dbpass=kkleinsc \
+	wp config create --dbhost="mariadb" \
+					--dbname="wordpress" \
+					--dbuser="kkleinsc" \
+					--dbpass="kkleinsc" \
 					--allow-root
 	echo "Wordpress: creating users..."
 	wp core install --allow-root \
